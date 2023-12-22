@@ -98,7 +98,7 @@ def decryption(ciphertext, private_key):
     return plaintext
 
 # Example usage:
-public_key, private_key = keys_generator(16)
+public_key, private_key = keys_generator(8)
 print("Public Key:", public_key)
 print("Private Key:", private_key)
 
