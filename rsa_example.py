@@ -64,7 +64,11 @@ def keys_generator(bits=16):
     q = generate_prime(bits)
     n = p * q
     phi_n = (p -1) * (q - 1)
-
+    # FAST_ENCRYPTION_KEYS = [3, 17, 65537]
+    # if speed_up:
+    #     i = random.randint(0,2)
+    #     e = FAST_ENCRYPTION_KEYS[i]
+    # else:
     e = random.randint(2, phi_n - 1)
     while gcd(e, phi_n) != 1:
         e = random.randint(2, phi_n - 1)
@@ -103,9 +107,12 @@ print("Public Key:", public_key)
 print("Private Key:", private_key)
 
 message = "Hello am trying to break the code world RSA!"
+# message = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 encrypted_msg = encryption(message, public_key)
 print("Encrypted:", encrypted_msg)
 
 decrypted_msg = decryption(encrypted_msg, private_key)
 print("Decrypted:", decrypted_msg)
+
+
 
